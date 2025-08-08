@@ -23,6 +23,7 @@ body {
     line-height: 1.6;
     color: var(--text-dark);
     background-color: var(--light-beige);
+    padding-top: 80px;
 }
 
 /* Navigation Styles */
@@ -32,6 +33,7 @@ body {
     box-shadow: var(--shadow);
     transition: all 0.3s ease;
     padding: 1rem 0;
+    height: 80px;
 }
 
 .navbar-brand {
@@ -81,6 +83,84 @@ body {
 .nav-link:hover::after,
 .nav-link.active::after {
     width: 100%;
+}
+
+/* Custom Hamburger Menu - Override Bootstrap */
+.navbar-toggler.custom-hamburger {
+    border: none !important;
+    background: transparent !important;
+    padding: 8px !important;
+    width: 40px !important;
+    height: 40px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 4px !important;
+    transition: all 0.3s ease !important;
+    box-shadow: none !important;
+}
+
+.navbar-toggler.custom-hamburger:focus {
+    box-shadow: none !important;
+    outline: none !important;
+}
+
+.navbar-toggler.custom-hamburger:hover {
+    background: transparent !important;
+}
+
+.hamburger-line {
+    width: 20px !important;
+    height: 3px !important;
+    background-color: var(--text-dark) !important;
+    border-radius: 2px !important;
+    transition: all 0.3s ease !important;
+    display: block !important;
+    margin: 0 !important;
+}
+
+/* Make the middle line longer */
+.hamburger-line:nth-child(2) {
+    width: 28px !important;
+}
+
+.navbar-toggler.custom-hamburger:hover .hamburger-line {
+    background-color: var(--primary-color) !important;
+}
+
+/* Hamburger animation when menu is open */
+.navbar-toggler.custom-hamburger[aria-expanded="true"] .hamburger-line:nth-child(1) {
+    transform: rotate(45deg) translate(6px, 6px) !important;
+}
+
+.navbar-toggler.custom-hamburger[aria-expanded="true"] .hamburger-line:nth-child(2) {
+    opacity: 0 !important;
+}
+
+.navbar-toggler.custom-hamburger[aria-expanded="true"] .hamburger-line:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px) !important;
+}
+
+/* Mobile Navigation Menu Background */
+@media (max-width: 991.98px) {
+    .navbar-collapse {
+        background-color: white !important;
+        border-radius: 8px !important;
+        margin-top: 10px !important;
+        padding: 15px !important;
+        box-shadow: var(--shadow) !important;
+    }
+    
+    .navbar-nav .nav-link {
+        padding: 10px 15px !important;
+        border-radius: 5px !important;
+        margin: 2px 0 !important;
+    }
+    
+    .navbar-nav .nav-link:hover {
+        background-color: rgba(43, 192, 228, 0.1) !important;
+    }
 }
 
 /* Hero Section */
